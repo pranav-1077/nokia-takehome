@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, Request
 import torch
 from torchvision import models, transforms
 from PIL import Image
@@ -24,7 +24,7 @@ class_labels = {0: 'empty', 1: 'filled'}
 
 # TODO: Implement a GET /author endpoint here
 @app.get("/author")
-def get_author(request):
+def get_author():
 
     return {
         "author": "pranav.walimbe@berkeley.edu"
@@ -32,7 +32,7 @@ def get_author(request):
 
 # TODO: Implement a POST /classify endpoint here
 @app.post("/classify")
-async def post_classify(request):
+async def post_classify(request: Request):
 
     form = await request.form()
     image_file = form['image']
