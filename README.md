@@ -41,28 +41,29 @@ Email: pranav.walimbe@berkeley.edu
 
 ## Usage
 
-1. clone repository
+1. clone repository:
+   
    `git clone git@github.com:pranav-1077/nokia-takehome.git`
 
-2. enter repository
+2. enter repository:
+   
    `cd nokia-takehome`
 
-3. build docker image
+3. build docker image:
+   
    `docker build -t <build name> .`
 
-4. run container
+4. run container:
+   
    `docker run -d -p 8080:8080 <build name>`
 
-5. image API call
+5. image API call:
    
-   `curl -X POST \                     
-  'http://localhost:8080/classify' \
-  -H 'Content-Type: multipart/form-data' \
-  -F 'image=@/image_path.jpg'`
+   `curl -X POST 'http://localhost:8080/classify' -H 'Content-Type: multipart/form-data' -F 'image=@/image_path.jpg'`
 
    sample output: {'class':'filled'}
    
-   author API call
+   author API call: 
    
    `curl -X GET 'http://localhost:8080/author'`
 
