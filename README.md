@@ -67,7 +67,7 @@ Email: pranav.walimbe@berkeley.edu
    
    `curl -X GET 'http://localhost:8080/author'`
 
-   sample_output: {'author':'pranav.walimbe@berkeley.edu'}
+   sample output: {'author':'pranav.walimbe@berkeley.edu'}
 
 ## Further Information
 
