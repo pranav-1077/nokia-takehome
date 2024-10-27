@@ -25,18 +25,18 @@ Email: pranav.walimbe@berkeley.edu
 
 ## Model Training + Performance 
 - **Architecture**: ResNet18
-  - Finetuned pre-trained ResNet18 model due to strong balance between computational efficiency (less layers than most pretrained vision models) and residual connection architecture enabling high performance on downstream tasks
+  - Finetuned pretrained ResNet18 model due to strong balance between computational efficiency (less layers than most pretrained vision models) and residual connection architecture enabling high performance on downstream tasks
   
 - **Dataset**:
-  - Dataset split: Used scaled class weights in loss function to address 70/30 class balance in dataset
-  - Augmentation: Used various techniques (normalization, color jitter, gaussian blur, random rotate) to increase dataset variability
+  - Dataset split: Used scaled class weights in loss function to address ~70/30 class imbalance in dataset
+  - Augmentation: Used various techniques (normalization, color jitter, gaussian blur, random rotate) to increase dataset variability and quality 
   
 - **Performance**:
   - Test accuracy: 100% (70-30 train-test split) 
   - Train accuracy: 100%
   - Recall: 1.00
   - Precision: 1.00
-  - Duration: ~4 minutes of training using T4 GPU
+  - Training Duration: ~4 minutes of training using T4 GPU
   epoch-based accuracies viewable in training script 
 
 ## Usage
@@ -54,19 +54,23 @@ Email: pranav.walimbe@berkeley.edu
    `docker run -d -p 8080:8080 <build name>`
 
 5. image API call
+   
    `curl -X POST \                     
   'http://localhost:8080/classify' \
   -H 'Content-Type: multipart/form-data' \
   -F 'image=@/image_path.jpg'`
+
    sample output: {'class':'filled'}
    
    author API call
+   
    `curl -X GET 'http://localhost:8080/author'`
+
    sample_output: {'author':'pranav.walimbe@berkeley.edu'}
 
 ## Further Information
 
-Model is used in quantized form when called through API for optimized inference efficiency on CPU 
+Model is used in quantized form when called through API for optimized inference efficiency on CPU. Container is optimized for CPU usage rather than GPU compatibility. 
 
 ## Acknowledgments
 
