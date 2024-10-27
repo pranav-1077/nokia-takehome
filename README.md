@@ -17,7 +17,7 @@ project-root/<br>
 │   │   ├── model_ep_04.pth<br>
 │   │   └── model_ep_05.pth <- model checkpoint used in API<br>
 │   ├── models/<br>
-│   │──resnet18_training.ipynb <- script for fine-tuning ML model <br>
+│   │──resnet18_training.ipynb <- script for fine-tuning ML model<br>
 │   ├── training_data/<br> 
 │   │   ├── images.zip<br>
 │   │   └── labels.csv<br>
