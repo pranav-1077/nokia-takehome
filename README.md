@@ -28,7 +28,8 @@ Email: pranav.walimbe@berkeley.edu
   - Finetuned pretrained ResNet18 model due to strong balance between computational efficiency (less layers than most pretrained vision models) and residual connection architecture enabling high performance on downstream tasks
   
 - **Dataset**:
-  - Dataset split: Used scaled class weights in loss function to address ~70/30 class imbalance in dataset
+  - Problems: ~30/70 class imbalance, lack of image variance
+  - Dataset split: Used scaled class weights in loss function to address class imbalance in dataset
   - Augmentation: Used various techniques (normalization, color jitter, gaussian blur, random rotate) to increase dataset variability and quality 
   
 - **Performance**:
@@ -59,7 +60,7 @@ Email: pranav.walimbe@berkeley.edu
 
 5. image API call:
    
-   `curl -X POST 'http://localhost:8080/classify' -H 'Content-Type: multipart/form-data' -F 'image=@/image_path.jpg'`
+   `curl -X POST 'http://localhost:8080/classify' -H 'Content-Type: multipart/form-data' -F 'image=@/<image_path>.jpg'`
 
    sample output: {'class':'filled'}
    
