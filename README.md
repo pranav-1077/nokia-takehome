@@ -1,8 +1,8 @@
 ### Nokia Assessment: Pranav Walimbe
 
 ## Introduction
-Description: API service for warehouse space classification 
-Name: Pranav Walimbe 
+Description: API service for warehouse space classification <br>
+Name: Pranav Walimbe <br>
 Email: pranav.walimbe@berkeley.edu 
 
 ## Codebase structure 
